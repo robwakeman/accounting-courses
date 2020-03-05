@@ -1,25 +1,18 @@
 {
-  "name": "frontend-boilerplate",
+  "name": "accounting-courses",
   "version": "1.0.0",
-  "description": "Simple front-end boilerplate using Gulp 4",
+  "description": "Coding test for Nelson Croom",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thecodercoder/frontend-boilerplate.git"
+    "url": ""
   },
   "keywords": [
-    "gulp",
-    "boilerplate",
-    "html",
-    "css",
-    "javascript"
+    "accounting",
+    "courses"
   ],
-  "author": "@thecodercoder",
+  "author": "Rob Wakeman",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thecodercoder/frontend-boilerplate/issues"
-  },
-  "homepage": "https://github.com/thecodercoder/frontend-boilerplate#readme",
   "devDependencies": {
     "autoprefixer": "^9.7.0",
     "cssnano": "^4.1.10",
