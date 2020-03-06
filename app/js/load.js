@@ -11,14 +11,3 @@ if (document.readyState === 'loading') {
   // `DOMContentLoaded` has already fired
   runApp();
 }
-
-function runApp() {
-  console.log('This is in runApp');
-  console.log('DOM loaded');
-  console.log('Load script.js lmn');
-
-  // testing ES6/Babel
-  const func = msg => console.log(msg);
-
-  func('hello there ddee');
-}
