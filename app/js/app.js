@@ -12,9 +12,9 @@ function runApp() {
 
   // get elements
   const coursesContainer = document.querySelector('[data-courses]');
-  console.log('coursesContainer is: ', coursesContainer);
+  // console.log('coursesContainer is: ', coursesContainer);
 
-  // API URL
+  // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
 
   // get courses
