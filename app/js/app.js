@@ -29,7 +29,16 @@ function runApp() {
         // save the data in variable coursesAll
         coursesAll = data;
 
+        const coursesTax = coursesAll.filter(course => course.type === 'tax');
+        console.log('coursesTax: ', coursesTax);
+        const coursesCommun = coursesAll.filter(course => course.type === 'communication');
+        console.log('coursesCommun: ', coursesCommun);
+        const coursesTech = coursesAll.filter(course => course.type === 'technology');
+        console.log('coursesTech: ', coursesTech);
+
         // console.log(coursesAll);
+
+        // show all courses on first load
         showOutput(coursesAll);
       })
       .catch(err => console.log('Catch Error', err));
