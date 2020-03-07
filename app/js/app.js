@@ -14,14 +14,10 @@ function runApp() {
   const coursesContainer = document.querySelector('[data-courses]');
   // console.log('coursesContainer is: ', coursesContainer);
 
-  const filterAll = document.querySelector("[data-filter='all']");
-  // console.log('filterTax is: ', filterTax);
-  const filterTax = document.querySelector("[data-filter='tax']");
-  // console.log('filterTax is: ', filterTax);
-  const filterCommunication = document.querySelector("[data-filter='communication']");
-  // console.log('filterTax is: ', filterTax);
-  const filterTechnology = document.querySelector("[data-filter='technology']");
-  // console.log('filterTax is: ', filterTax);
+  const filterAllBtn = document.querySelector("[data-filter='all']");
+  const filterTaxBtn = document.querySelector("[data-filter='tax']");
+  const filterCommunicationBtn = document.querySelector("[data-filter='communication']");
+  const filterTechnologyBtn = document.querySelector("[data-filter='technology']");
 
   // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
@@ -79,7 +75,7 @@ function runApp() {
 
   getCourses();
 
-  filterAll.addEventListener(
+  filterAllBtn.addEventListener(
     'click',
     function() {
       showOutput(coursesAll);
@@ -87,7 +83,7 @@ function runApp() {
     false
   );
 
-  filterTax.addEventListener(
+  filterTaxBtn.addEventListener(
     'click',
     function() {
       showOutput(coursesTax);
@@ -95,7 +91,7 @@ function runApp() {
     false
   );
 
-  filterCommunication.addEventListener(
+  filterCommunicationBtn.addEventListener(
     'click',
     function() {
       showOutput(coursesCommunication);
@@ -103,7 +99,7 @@ function runApp() {
     false
   );
 
-  filterTechnology.addEventListener(
+  filterTechnologyBtn.addEventListener(
     'click',
     function() {
       showOutput(coursesTechnology);
