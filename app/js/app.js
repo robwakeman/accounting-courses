@@ -16,6 +16,7 @@ function runApp() {
 
   // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
+  let coursesAll;
 
   // get courses
   function getCourses() {
@@ -23,16 +24,13 @@ function runApp() {
       .then(handleErrors)
       .then(res => res.json())
       .then(data => {
-        let output = '<h2>Courses</h2>';
-        data.forEach(function(course) {
-          output += `
-      <div">
-        <h3>${course.title}</h3>
-        <p>${course.type}</p>
-      </div>
-    `;
-        });
-        coursesContainer.innerHTML = output;
+        // console.log(data);
+
+        // save the data in variable coursesAll
+        coursesAll = data;
+
+        // console.log(coursesAll);
+        showOutput(coursesAll);
       })
       .catch(err => console.log('Catch Error', err));
   }
@@ -43,6 +41,19 @@ function runApp() {
       throw new Error(res.statusText);
     }
     return res;
+  }
+
+  function showOutput(outputData) {
+    let output = '<h2>Courses</h2>';
+    outputData.forEach(function(course) {
+      output += `
+      <div">
+        <h3>${course.title}</h3>
+        <p>${course.type}</p>
+      </div>
+    `;
+    });
+    coursesContainer.innerHTML = output;
   }
 
   getCourses();
