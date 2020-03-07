@@ -1,12 +1,10 @@
-console.log(`This is in app.js and now comes last, because I've specified the order in gulpfile.js for concat`);
+console.log(`This is in app.js outside of runApp`);
 
 function runApp() {
-  console.log('This is in runApp');
-  console.log('DOM loaded');
-  console.log('Load script.js nop');
+  console.log('This is in runApp (in app.js)');
 
   // testing ES6/Babel
   const func = msg => console.log(msg);
 
-  func('hello there');
+  func('hello there called inside runApp');
 }

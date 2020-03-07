@@ -4,6 +4,8 @@
 
 // Instead, check if (document.readyState === 'loading') i.e. check the document is still loading before trying to respond to the DOMContentLoaded event.
 
+console.log('This is in load.js');
+
 if (document.readyState === 'loading') {
   // Loading hasn't finished yet
   document.addEventListener('DOMContentLoaded', runApp);
