@@ -69,24 +69,42 @@ body {
 }
 
 .header {
+  width: 100vw;
   color: $white;
 }
 
 .header-top {
-  width: 414px;
+  // width: 414px;
   // height: 70px;
+  // width: 100%;
+  padding: 15px 0;
   display: flex;
   background: $grey4;
 
-  & * {
-    flex: 1;
-  }
+  // & * {
+  //   flex: 1;
+  // }
+
+  // & .logo {
+  //   flex: 1;
+  // }
+}
+
+.logo-container {
+  width: 100%;
+  // background: teal;
+  display: flex;
+  justify-content: center;
+  // order: 1;
+}
+
+.logo-link {
+  display: block;
 }
 
 .logo {
   width: 178px;
   height: 40px;
-  margin-left: 118px;
 
   @media #{$mq-620-up} {
     width: 200px;
@@ -96,8 +114,16 @@ body {
 
 .primary-menu-container {
   width: 79px;
+  // width: 100%;
+  margin-top: 11px;
+  margin-right: 20px;
   // background: goldenrod;
-  text-align: right;
+  // text-align: right;
+  display: flex;
+  // order: -1;
+  flex-direction: column;
+  align-items: flex-end;
+  // margin-left: auto;
 }
 
 .primary-menu__item a {
@@ -125,13 +151,14 @@ body {
 }
 
 .menu-burger {
-  display: inline-block;
+  display: block;
   width: 32px;
   height: 20px;
   position: relative;
   user-select: none;
   z-index: 20;
-  background: none;
+  background: orangered;
+  background: transparent;
   border: none;
   cursor: pointer;
   border: none;
@@ -170,8 +197,7 @@ body {
 }
 
 .hero {
-  // temp
-  background: $grey1;
+  // background: $grey1;
 }
 
 // basic button styling, so easy to see for now
