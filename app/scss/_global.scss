@@ -9,6 +9,9 @@ html {
   box-sizing: inherit;
 }
 /* 
+
+// orig FE boilerplate styles
+
 body {
   padding: 90px;
   background-color: $ltGray;
@@ -47,9 +50,30 @@ aside {
 }
  */
 
+// resets
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background: lightgrey;
+  // background: lightgrey;
   font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  color: $white;
+}
+
+.header-top {
+  background: $grey4;
+}
+
+.hero {
+  // temp
+  background: $grey1;
 }
 
 // basic button styling, so easy to see for now
