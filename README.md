@@ -39,6 +39,11 @@ https://github.com/github/fetch
 
 polyfills.js was processed through Gulp tasks to concatenate and minify into dist/all.js
 
-However, this broke the script.
+However, this broke the script:
+
+`Uncaught ReferenceError: exports is not defined`
+
+Adding `var exports = {};` didn't solve it, as in:  
+https://github.com/robwakeman/fetch-sandbox
 
 I didn't have time to solve this.
