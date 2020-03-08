@@ -76,6 +76,16 @@ body {
   background: $grey4;
 }
 
+.logo {
+  width: 178px;
+  height: 40px;
+
+  @media #{$mq-620-up} {
+    width: 200px;
+    height: 45px;
+  }
+}
+
 .primary-menu__item a {
   font-size: 14px;
   width: 79px;
