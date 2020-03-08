@@ -20,7 +20,7 @@ function runApp() {
   const filterTechnologyBtn = document.querySelector("[data-filter='technology']");
 
   // API URL (array of 29 objects)
-  const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
+  const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObjectxxx';
   let coursesAll;
   let coursesTax;
   let coursesCommunication;
