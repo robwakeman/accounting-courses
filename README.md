@@ -22,7 +22,7 @@ Gulp 4
 ### Fetch
 
 Fetch and Promises have very good browser support according to Can I use:  
-[Promises](https://caniuse.com/#search=promise)
+[Promises](https://caniuse.com/#search=promise)  
 [Fetch](https://caniuse.com/#search=fetch)
 
 But, there is no IE11 support, of course.
