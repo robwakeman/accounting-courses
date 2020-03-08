@@ -73,17 +73,31 @@ body {
 }
 
 .header-top {
+  width: 414px;
+  // height: 70px;
+  display: flex;
   background: $grey4;
+
+  & * {
+    flex: 1;
+  }
 }
 
 .logo {
   width: 178px;
   height: 40px;
+  margin-left: 118px;
 
   @media #{$mq-620-up} {
     width: 200px;
     height: 45px;
   }
+}
+
+.primary-menu-container {
+  width: 79px;
+  // background: goldenrod;
+  text-align: right;
 }
 
 .primary-menu__item a {
@@ -106,7 +120,52 @@ body {
 
   &.log-in {
     color: $colourPrimary;
-    background: transparent;
+    background: $black;
+  }
+}
+
+.menu-burger {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  position: relative;
+  user-select: none;
+  z-index: 20;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  @media #{$mq-620-up} {
+    display: none;
+  }
+
+  & span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: $white;
+    // opacity: 1;
+    left: 0;
+    // transform: rotate(0deg);
+    // transition: 0.25s ease-in-out;
+  }
+
+  & span:nth-child(1) {
+    top: 0px;
+  }
+
+  & span:nth-child(2) {
+    top: 8px;
+  }
+
+  & span:nth-child(3) {
+    top: 16px;
   }
 }
 
