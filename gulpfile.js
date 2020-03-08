@@ -33,7 +33,7 @@ function scssTask() {
 // JS task: concatenates and uglifies JS files to script.js
 function jsTask() {
   return src(
-    [files.jsPath + 'load.js', files.jsPath + 'app.js']
+    [files.jsPath + 'polyfills.js', files.jsPath + 'load.js', files.jsPath + 'app.js']
     //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
   )
     .pipe(
@@ -58,7 +58,7 @@ function cacheBustTask() {
 // If any change, run scss and js tasks simultaneously
 function watchTask() {
   watch(
-    [files.scssPath, files.jsPath + 'load.js', files.jsPath + 'app.js'],
+    [files.scssPath, files.jsPath + 'polyfills.js', files.jsPath + 'load.js', files.jsPath + 'app.js'],
     { interval: 1000, usePolling: true }, //Makes docker work
     series(parallel(scssTask, jsTask), cacheBustTask)
   );
