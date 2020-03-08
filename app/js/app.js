@@ -1,18 +1,6 @@
-console.log(`This is in app.js outside of runApp`);
-
 function runApp() {
-  console.log('This is in runApp (in app.js)');
-
-  // testing ES6/Babel
-  const func = msg => console.log(msg);
-
-  func('hello there called inside runApp');
-
-  /* ************************** */
-
   // get elements
   const coursesDiv = document.querySelector('[data-courses]');
-  // console.log('coursesDiv is: ', coursesDiv);
 
   const filterAllBtn = document.querySelector("[data-filter='all']");
   const filterTaxBtn = document.querySelector("[data-filter='tax']");
