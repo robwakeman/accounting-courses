@@ -198,6 +198,12 @@ body {
 
 .hero {
   // background: $grey1;
+  background: url(../dist/images/lake-1x.jpg) center no-repeat;
+  height: 298px;
+
+  @media #{$mq-620-up} {
+    background: url(../dist/images/lake-2x.jpg) center no-repeat;
+  }
 }
 
 // basic button styling, so easy to see for now
