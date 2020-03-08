@@ -58,9 +58,14 @@ ul {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   // background: lightgrey;
   font-family: 'Roboto', sans-serif;
+  line-height: 1.45;
 }
 
 .header {
@@ -69,6 +74,30 @@ body {
 
 .header-top {
   background: $grey4;
+}
+
+.primary-menu__item a {
+  font-size: 14px;
+  width: 79px;
+  height: 36px;
+  color: $white;
+  display: inline-block;
+  text-align: center;
+  padding: 9px 11px 6px;
+  border: 1px solid $colourPrimary;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  background-color: $colourPrimary;
+
+  // transition: background 0.2s ease-out;
+  // &:hover {
+  //   background-color: scale-color($colourPrimary, $lightness: 70%);
+  // }
+
+  &.log-in {
+    color: $colourPrimary;
+    background: transparent;
+  }
 }
 
 .hero {
