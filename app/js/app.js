@@ -11,8 +11,8 @@ function runApp() {
   /* ************************** */
 
   // get elements
-  const coursesContainer = document.querySelector('[data-courses]');
-  // console.log('coursesContainer is: ', coursesContainer);
+  const coursesDiv = document.querySelector('[data-courses]');
+  // console.log('coursesDiv is: ', coursesDiv);
 
   const filterAllBtn = document.querySelector("[data-filter='all']");
   const filterTaxBtn = document.querySelector("[data-filter='tax']");
@@ -20,11 +20,13 @@ function runApp() {
   const filterTechnologyBtn = document.querySelector("[data-filter='technology']");
 
   // API URL (array of 29 objects)
-  const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObjectxxx';
+  const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
   let coursesAll;
   let coursesTax;
   let coursesCommunication;
   let coursesTechnology;
+  let output;
+  let imageSrcNoExt;
 
   // get courses
   function getCourses() {
@@ -37,14 +39,13 @@ function runApp() {
         // save the data in variable coursesAll
         coursesAll = data;
 
+        // filter the array by course category
         coursesTax = coursesAll.filter(course => course.type === 'tax');
         console.log('coursesTax: ', coursesTax);
         coursesCommunication = coursesAll.filter(course => course.type === 'communication');
         console.log('coursesCommunication: ', coursesCommunication);
         coursesTechnology = coursesAll.filter(course => course.type === 'technology');
         console.log('coursesTechnology: ', coursesTechnology);
-
-        // console.log(coursesAll);
 
         // show all courses on first load
         showOutput(coursesAll);
@@ -61,16 +62,22 @@ function runApp() {
   }
 
   function showOutput(outputData) {
-    let output = `<h2>Courses (${outputData.length})</h2>`;
+    output = `<div style="color: green; margin-bottom: 1rem;">Debug num courses: ${outputData.length}</div>`;
     outputData.forEach(function(course) {
+      // regex expression that allows for 3 or 4 character file extensions
+      imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
+
       output += `
-      <div">
-        <h3>${course.title}</h3>
-        <p>${course.type}</p>
+      <div class="course">
+      <!-- responsive image code to include here -->
+            <img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" />
+            <h2 class="course__title">${course.title}</h2>
+            <p class="course_description">${course.type}</p>
+            <div class="course__price">Price: &pound;${course.price}</div>
       </div>
     `;
     });
-    coursesContainer.innerHTML = output;
+    coursesDiv.innerHTML = output;
   }
 
   getCourses();
