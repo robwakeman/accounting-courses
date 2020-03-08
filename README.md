@@ -16,3 +16,28 @@ Gulp 4
 - Concatenate the JS files
 - Uglify the JS files
 - Move final CSS and JS files to the /dist folder
+
+## Notes
+
+### Fetch
+
+Fetch and Promises have very good browser support according to Can I use:  
+[Promises](https://caniuse.com/#search=promise)
+[Fetch](https://caniuse.com/#search=fetch)
+
+But, there is no IE11 support, of course.
+
+So, I wanted to polyfill them.
+
+I added the following polyfills to a polyfills.js file:
+
+Fetch polyfill
+https://github.com/github/fetch  
+Promise polyfill
+https://www.npmjs.com/package/promise-polyfill
+
+polyfills.js was processed through Gulp tasks to concatenate and minify into dist/all.js
+
+However, this broke the script.
+
+I didn't have time to solve this.
