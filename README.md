@@ -29,12 +29,13 @@ But, there is no IE11 support, of course.
 
 So, I wanted to polyfill them.
 
-I added the following polyfills to a polyfills.js file:
+I added the following polyfills to a polyfills.js file (with Promise coming before Fetch):
 
-Fetch polyfill
-https://github.com/github/fetch  
 Promise polyfill
 https://www.npmjs.com/package/promise-polyfill
+
+Fetch polyfill
+https://github.com/github/fetch
 
 polyfills.js was processed through Gulp tasks to concatenate and minify into dist/all.js
 
