@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   // background: lightgrey;
   font-family: 'Roboto', sans-serif;
@@ -199,16 +203,22 @@ body {
   background-color: $colourPrimary;
 }
 
+.main {
+  margin: 0 15px;
+}
+
 // basic button styling, so easy to see for now
 
 .filter-button-group {
-  padding: 0.5rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 .btn-filter {
   font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  margin: 0.25rem;
-  background: white;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
   border: 0;
   cursor: pointer;
 }
