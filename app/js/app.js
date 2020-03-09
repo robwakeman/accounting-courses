@@ -28,15 +28,17 @@ function runApp() {
   let numLoads = 0;
   let coursesBatch;
   let numBatches;
+  let totalCourses;
 
   const addToNumLoads = () => {
     numLoads++;
     console.log('numLoads in addToNumLoads: ', numLoads);
   };
 
-  const resetNumLoads = () => {
+  const reset = () => {
     numLoads = 0;
     console.log('numLoads after reset: ', numLoads);
+    loadMoreBtn.removeAttribute('disabled');
   };
 
   const loadCourses = (coursesArr, batchSize, type) => {
@@ -125,7 +127,17 @@ function runApp() {
   }
 
   function showOutput(outputData, type) {
-    output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">Debug num courses: ${outputData.length} ${type}</div>`;
+    if (currentType === 'all') {
+      totalCourses = coursesAll.length;
+    } else if (currentType === 'tax') {
+      totalCourses = coursesTax.length;
+    } else if (currentType === 'communication') {
+      totalCourses = coursesCommunication.length;
+    } else if (currentType === 'technology') {
+      totalCourses = coursesTechnology.length;
+    }
+
+    output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">DEBUG No. courses loaded: ${outputData.length} ${type} (Total ${totalCourses})</div>`;
     outputData.forEach(function(course, i) {
       // regex expression that allows for 3 or 4 character file extensions
       imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
@@ -156,7 +168,7 @@ function runApp() {
     function() {
       // showOutput(coursesAll);
       clearCoursesDiv();
-      resetNumLoads();
+      reset();
       addToNumLoads();
       loadCourses(coursesAll, 10, 'all');
     },
@@ -168,7 +180,7 @@ function runApp() {
     function() {
       // showOutput(coursesTax);
       clearCoursesDiv();
-      resetNumLoads();
+      reset();
       addToNumLoads();
       loadCourses(coursesTax, 10, 'tax');
     },
@@ -180,7 +192,7 @@ function runApp() {
     function() {
       // showOutput(coursesCommunication);
       clearCoursesDiv();
-      resetNumLoads();
+      reset();
       addToNumLoads();
       loadCourses(coursesCommunication, 10, 'communication');
     },
@@ -192,7 +204,7 @@ function runApp() {
     function() {
       // showOutput(coursesTechnology);
       clearCoursesDiv();
-      resetNumLoads();
+      reset();
       addToNumLoads();
       loadCourses(coursesTechnology, 10, 'technology');
     },
