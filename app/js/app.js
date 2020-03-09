@@ -13,6 +13,7 @@ function runApp() {
   let coursesTax;
   let coursesCommunication;
   let coursesTechnology;
+  let currentType;
   let output;
   let imageSrcNoExt;
 
@@ -30,7 +31,7 @@ function runApp() {
 
   const addToNumLoads = () => {
     numLoads++;
-    console.log('numLoads: ', numLoads);
+    console.log('numLoads in addToNumLoads: ', numLoads);
   };
 
   const resetNumLoads = () => {
@@ -40,6 +41,9 @@ function runApp() {
 
   const loadCourses = (coursesArr, batchSize, type) => {
     console.log('load courses');
+
+    currentType = type;
+    console.log('%c currentType', 'background: #222; color: #bada55', currentType);
 
     if (coursesArr.length) {
       console.log('batchSize', batchSize);
@@ -70,7 +74,15 @@ function runApp() {
 
   loadMoreBtn.addEventListener('click', function() {
     addToNumLoads();
-    loadCourses(coursesAll, 10);
+    if (currentType === 'all') {
+      loadCourses(coursesAll, 10, currentType);
+    } else if (currentType === 'tax') {
+      loadCourses(coursesTax, 10, currentType);
+    } else if (currentType === 'communication') {
+      loadCourses(coursesCommunication, 10, currentType);
+    } else if (currentType === 'technology') {
+      loadCourses(coursesTechnology, 10, currentType);
+    }
   });
 
   /*********** END LOAD MORE ************ */
