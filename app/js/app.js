@@ -33,7 +33,12 @@ function runApp() {
     console.log('numLoads: ', numLoads);
   };
 
-  const loadCourses = (coursesArr, batchSize) => {
+  const resetNumLoads = () => {
+    numLoads = 0;
+    console.log('numLoads after reset: ', numLoads);
+  };
+
+  const loadCourses = (coursesArr, batchSize, type) => {
     console.log('load courses');
 
     if (coursesArr.length) {
@@ -59,7 +64,7 @@ function runApp() {
 
       // coursesList.innerHTML += coursesListElements.join('');
       // copy showOutput over to load more to test
-      showOutput(coursesBatch);
+      showOutput(coursesBatch, type);
     }
   };
 
@@ -80,19 +85,21 @@ function runApp() {
 
         // save the data in variable coursesAll
         coursesAll = data;
-        console.log('coursesAll: ', coursesAll);
+        // console.log('coursesAll: ', coursesAll);
 
         // filter the array by course category
         coursesTax = coursesAll.filter(course => course.type === 'tax');
-        console.log('coursesTax: ', coursesTax);
+        // console.log('coursesTax: ', coursesTax);
         coursesCommunication = coursesAll.filter(course => course.type === 'communication');
-        console.log('coursesCommunication: ', coursesCommunication);
+        // console.log('coursesCommunication: ', coursesCommunication);
         coursesTechnology = coursesAll.filter(course => course.type === 'technology');
-        console.log('coursesTechnology: ', coursesTechnology);
+        // console.log('coursesTechnology: ', coursesTechnology);
 
         // show all courses on first load
         // showOutput(coursesAll);
-        loadCourses(coursesAll, 10);
+        addToNumLoads();
+        // on first fetch, load 10 courses from all categories
+        loadCourses(coursesAll, 10, 'all');
       })
       .catch(err => console.log('Catch Error', err));
   }
@@ -105,17 +112,18 @@ function runApp() {
     return res;
   }
 
-  function showOutput(outputData) {
-    output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">Debug num courses: ${outputData.length}</div>`;
-    outputData.forEach(function(course) {
+  function showOutput(outputData, type) {
+    output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">Debug num courses: ${outputData.length} ${type}</div>`;
+    outputData.forEach(function(course, i) {
       // regex expression that allows for 3 or 4 character file extensions
       imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
 
       output += `
       <div class="course">
       <!-- responsive image code to include here -->
-            <img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" />
-            <h2 class="course__title">${course.title}</h2>
+      <!-- width: 30px just for testing the load more code - easier to see -->
+            <img style="width: 30px" src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" />
+            <h2 class="course__title">${i + 1} - ${course.title}</h2>
             <p class="course_description">${course.type}</p>
             <div class="course__price">Price: &pound;${course.price}</div>
       </div>
@@ -125,12 +133,20 @@ function runApp() {
     coursesDiv.innerHTML += output;
   }
 
+  function clearCoursesDiv() {
+    coursesDiv.innerHTML = '';
+  }
+
   getCourses();
 
   filterAllBtn.addEventListener(
     'click',
     function() {
-      showOutput(coursesAll);
+      // showOutput(coursesAll);
+      clearCoursesDiv();
+      resetNumLoads();
+      addToNumLoads();
+      loadCourses(coursesAll, 10, 'all');
     },
     false
   );
@@ -138,7 +154,11 @@ function runApp() {
   filterTaxBtn.addEventListener(
     'click',
     function() {
-      showOutput(coursesTax);
+      // showOutput(coursesTax);
+      clearCoursesDiv();
+      resetNumLoads();
+      addToNumLoads();
+      loadCourses(coursesTax, 10, 'tax');
     },
     false
   );
@@ -146,7 +166,11 @@ function runApp() {
   filterCommunicationBtn.addEventListener(
     'click',
     function() {
-      showOutput(coursesCommunication);
+      // showOutput(coursesCommunication);
+      clearCoursesDiv();
+      resetNumLoads();
+      addToNumLoads();
+      loadCourses(coursesCommunication, 10, 'communication');
     },
     false
   );
@@ -154,7 +178,11 @@ function runApp() {
   filterTechnologyBtn.addEventListener(
     'click',
     function() {
-      showOutput(coursesTechnology);
+      // showOutput(coursesTechnology);
+      clearCoursesDiv();
+      resetNumLoads();
+      addToNumLoads();
+      loadCourses(coursesTechnology, 10, 'technology');
     },
     false
   );
