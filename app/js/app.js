@@ -50,7 +50,7 @@ function runApp() {
   }
 
   function showOutput(outputData) {
-    output = `<div style="color: green; margin-bottom: 1rem;">Debug num courses: ${outputData.length}</div>`;
+    output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">Debug num courses: ${outputData.length}</div>`;
     outputData.forEach(function(course) {
       // regex expression that allows for 3 or 4 character file extensions
       imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
