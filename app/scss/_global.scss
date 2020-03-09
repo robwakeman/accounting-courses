@@ -161,19 +161,15 @@ body {
 }
 
 .hero {
-  // background: $grey1;
   position: relative;
   background: url(../dist/images/lake-m1x.jpg) center no-repeat;
   background-color: $grey3;
   background-color: #dddddd;
   background-blend-mode: multiply;
   height: 298px;
-  // padding: 2rem 15px;
 
   @media #{$mq-900-up} {
     background: url(../dist/images/lake-d1x.jpg) center no-repeat;
-    // padding: 2rem auto 0 375px;
-    // padding-left: 375px;
   }
 
   &__inner {
