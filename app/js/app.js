@@ -16,6 +16,60 @@ function runApp() {
   let output;
   let imageSrcNoExt;
 
+  /********* BEGIN LOAD MORE ************** */
+  // load-more code
+
+  // const loadCoursesBtn = document.getElementById("loadCourses");
+  const loadMoreBtn = document.querySelector('[data-load-more]');
+
+  // const coursesList = document.querySelector(".courses");
+  // let coursesListElements;
+  let numLoads = 0;
+  let coursesBatch;
+  let numBatches;
+
+  const addToNumLoads = () => {
+    numLoads++;
+    console.log('numLoads: ', numLoads);
+  };
+
+  const loadCourses = (coursesArr, batchSize) => {
+    console.log('load courses');
+
+    if (coursesArr.length) {
+      console.log('batchSize', batchSize);
+      console.log('1st arg', (numLoads - 1) * batchSize);
+      console.log('2nd arg', numLoads * batchSize);
+
+      numBatches = coursesArr.length / batchSize; //2.3
+      console.log('numBatches', numBatches);
+
+      coursesBatch = coursesArr.slice((numLoads - 1) * batchSize, batchSize * numLoads);
+      console.log('coursesBatch: ', coursesBatch);
+
+      // coursesListElements = coursesBatch.map(course => {
+      //   return `<li class="course__item">${course}</li>`;
+      // });
+
+      // if the number of loads is equal to the number of batches, then disable the button
+      if (numLoads === Math.ceil(numBatches)) {
+        console.log('numLoads === Math.ceil(numBatches), so disable the button to prevent loading more courses');
+        loadMoreBtn.setAttribute('disabled', '');
+      }
+
+      // coursesList.innerHTML += coursesListElements.join('');
+      // copy showOutput over to load more to test
+      showOutput(coursesBatch);
+    }
+  };
+
+  loadMoreBtn.addEventListener('click', function() {
+    addToNumLoads();
+    loadCourses(coursesAll, 10);
+  });
+
+  /*********** END LOAD MORE ************ */
+
   // get courses
   function getCourses() {
     fetch(APIURL)
@@ -26,6 +80,7 @@ function runApp() {
 
         // save the data in variable coursesAll
         coursesAll = data;
+        console.log('coursesAll: ', coursesAll);
 
         // filter the array by course category
         coursesTax = coursesAll.filter(course => course.type === 'tax');
@@ -36,7 +91,8 @@ function runApp() {
         console.log('coursesTechnology: ', coursesTechnology);
 
         // show all courses on first load
-        showOutput(coursesAll);
+        // showOutput(coursesAll);
+        loadCourses(coursesAll, 10);
       })
       .catch(err => console.log('Catch Error', err));
   }
@@ -65,7 +121,8 @@ function runApp() {
       </div>
     `;
     });
-    coursesDiv.innerHTML = output;
+    // coursesDiv.innerHTML = output;
+    coursesDiv.innerHTML += output;
   }
 
   getCourses();
