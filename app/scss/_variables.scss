@@ -15,8 +15,11 @@
 
 // $mq-1400-up: "only screen and (min-width: 1400px)";
 
-$mq-414-down: 'only screen and (max-width: 414px)';
+$mq-414-down: 'only screen and (max-width: 413px)';
 $mq-414-up: 'only screen and (min-width: 414px)';
+
+$mq-540-down: 'only screen and (max-width: 539px)';
+$mq-540-up: 'only screen and (min-width: 540px)';
 
 $mq-620-down: 'only screen and (max-width: 620px)';
 $mq-620-up: 'only screen and (min-width: 620px)';
