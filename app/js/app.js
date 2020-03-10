@@ -8,6 +8,7 @@ function runApp() {
   const filterTechnologyBtn = document.querySelector("[data-filter='technology']");
   // const filterButtons = document.querySelectorAll('.btn');
   const filterButtonGroup = document.querySelector('[data-filter-button-group]');
+  const filterButtons = document.querySelectorAll('.btn-filter');
 
   // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
@@ -173,6 +174,14 @@ function runApp() {
     } else if (courseFilter === 'technology') {
       loadCourses(coursesTechnology, 10, 'technology');
     }
+
+    filterButtons.forEach(function(filterButton) {
+      filterButton.classList.remove('is-checked');
+    });
+
+    event.target.classList.add('is-checked');
+
+    //
   });
 
   /*

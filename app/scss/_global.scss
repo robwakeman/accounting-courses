@@ -243,11 +243,10 @@ body {
   border: 0;
   background: transparent;
   cursor: pointer;
-}
 
-.courses-container {
-  // background: #ededed;
-  // max-width: 384px;
+  &.is-checked {
+    background: yellow;
+  }
 }
 
 .btn-load-more {
