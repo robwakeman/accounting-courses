@@ -6,6 +6,8 @@ function runApp() {
   const filterTaxBtn = document.querySelector("[data-filter='tax']");
   const filterCommunicationBtn = document.querySelector("[data-filter='communication']");
   const filterTechnologyBtn = document.querySelector("[data-filter='technology']");
+  // const filterButtons = document.querySelectorAll('.btn');
+  const filterButtonGroup = document.querySelector('[data-filter-button-group]');
 
   // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
@@ -17,18 +19,14 @@ function runApp() {
   let output;
   let imageSrcNoExt;
 
-  /********* BEGIN LOAD MORE ************** */
-  // load-more code
-
-  // const loadCoursesBtn = document.getElementById("loadCourses");
   const loadMoreBtn = document.querySelector('[data-load-more]');
 
-  // const coursesList = document.querySelector(".courses");
-  // let coursesListElements;
   let numLoads = 0;
   let coursesBatch;
   let numBatches;
+  // totalCourses used in logic for testing, but debug output currently disabled
   let totalCourses;
+  let courseFilter;
 
   const addToNumLoads = () => {
     numLoads++;
@@ -58,18 +56,13 @@ function runApp() {
       coursesBatch = coursesArr.slice((numLoads - 1) * batchSize, batchSize * numLoads);
       console.log('coursesBatch: ', coursesBatch);
 
-      // coursesListElements = coursesBatch.map(course => {
-      //   return `<li class="course__item">${course}</li>`;
-      // });
-
       // if the number of loads is equal to the number of batches, then disable the button
       if (numLoads === Math.ceil(numBatches)) {
         console.log('numLoads === Math.ceil(numBatches), so disable the button to prevent loading more courses');
         loadMoreBtn.setAttribute('disabled', '');
+        loadMoreBtn.textContent = 'No more courses';
       }
 
-      // coursesList.innerHTML += coursesListElements.join('');
-      // copy showOutput over to load more to test
       showOutput(coursesBatch, type);
     }
   };
@@ -86,8 +79,6 @@ function runApp() {
       loadCourses(coursesTechnology, 10, currentType);
     }
   });
-
-  /*********** END LOAD MORE ************ */
 
   // get courses
   function getCourses() {
@@ -137,7 +128,11 @@ function runApp() {
       totalCourses = coursesTechnology.length;
     }
 
-    output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">DEBUG No. courses loaded: ${outputData.length} ${type} (Total ${totalCourses})</div>`;
+    // debug output - currently disabled
+    // output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">DEBUG No. courses loaded: ${outputData.length} ${type} (Total ${totalCourses})</div>`;
+
+    output = ``;
+
     outputData.forEach(function(course, i) {
       // regex expression that allows for 3 or 4 character file extensions
       imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
@@ -145,15 +140,13 @@ function runApp() {
       output += `
       <div class="course">
       <!-- responsive image code to include here -->
-      <!-- width: 30px just for testing the load more code - easier to see -->
-            <img style="width: 30px" src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" />
+            <img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" />
             <h2 class="course__title">${i + 1} - ${course.title}</h2>
             <p class="course_description">${course.type}</p>
             <div class="course__price">Price: &pound;${course.price}</div>
       </div>
     `;
     });
-    // coursesDiv.innerHTML = output;
     coursesDiv.innerHTML += output;
   }
 
@@ -163,7 +156,7 @@ function runApp() {
 
   getCourses();
 
-  filterAllBtn.addEventListener(
+  /*   filterAllBtn.addEventListener(
     'click',
     function() {
       // showOutput(coursesAll);
@@ -173,9 +166,9 @@ function runApp() {
       loadCourses(coursesAll, 10, 'all');
     },
     false
-  );
+  ); */
 
-  filterTaxBtn.addEventListener(
+  /*   filterTaxBtn.addEventListener(
     'click',
     function() {
       // showOutput(coursesTax);
@@ -185,9 +178,9 @@ function runApp() {
       loadCourses(coursesTax, 10, 'tax');
     },
     false
-  );
+  ); */
 
-  filterCommunicationBtn.addEventListener(
+  /*   filterCommunicationBtn.addEventListener(
     'click',
     function() {
       // showOutput(coursesCommunication);
@@ -197,9 +190,9 @@ function runApp() {
       loadCourses(coursesCommunication, 10, 'communication');
     },
     false
-  );
+  ); */
 
-  filterTechnologyBtn.addEventListener(
+  /*   filterTechnologyBtn.addEventListener(
     'click',
     function() {
       // showOutput(coursesTechnology);
@@ -209,7 +202,32 @@ function runApp() {
       loadCourses(coursesTechnology, 10, 'technology');
     },
     false
-  );
+  ); */
+
+  // let filterButtons = document.querySelectorAll('.popupbutton');
+  // buttons.forEach(btn => {
+  //   btn.addEventListener('click', event => {
+  //     alert(event.target);
+  //   });
+  // });
+
+  filterButtonGroup.addEventListener('click', event => {
+    // console.log('data attr filter: ', event.target.dataset.filter);
+    courseFilter = event.target.dataset.filter;
+    clearCoursesDiv();
+    reset();
+    addToNumLoads();
+
+    if (courseFilter === 'all') {
+      loadCourses(coursesAll, 10, 'all');
+    } else if (courseFilter === 'tax') {
+      loadCourses(coursesTax, 10, 'tax');
+    } else if (courseFilter === 'communication') {
+      loadCourses(coursesCommunication, 10, 'communication');
+    } else if (courseFilter === 'technology') {
+      loadCourses(coursesTechnology, 10, 'technology');
+    }
+  });
 
   /*
    *

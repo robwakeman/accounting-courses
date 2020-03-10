@@ -226,6 +226,7 @@ body {
 }
 
 .main {
+  max-width: 384px;
   margin: 0 15px;
 }
 
@@ -242,4 +243,28 @@ body {
   border: 0;
   background: transparent;
   cursor: pointer;
+}
+
+.courses-container {
+  // background: #ededed;
+  // max-width: 384px;
+}
+
+.btn-load-more {
+  font-size: 14px;
+  color: $colourPrimary;
+  display: block;
+  text-align: center;
+  padding: 9px 11px 6px;
+  border: 1px solid $colourPrimary;
+  border-radius: $borderRadius;
+  background-color: transparent;
+  margin: auto;
+  cursor: pointer;
+
+  &[disabled] {
+    color: $grey3;
+    border-color: $grey3;
+    cursor: default;
+  }
 }
