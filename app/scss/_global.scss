@@ -37,8 +37,10 @@ body {
 }
 
 .header-top {
-  padding: 15px 0;
+  // padding: 15px 0;
+  height: 70px;
   display: flex;
+  align-items: center;
   background: $grey4;
 
   // & * {
@@ -54,6 +56,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .logo-link {
@@ -63,6 +66,7 @@ body {
 .logo {
   width: 178px;
   height: 40px;
+  vertical-align: bottom;
 
   @media #{$mq-620-up} {
     width: 200px;
@@ -73,11 +77,22 @@ body {
 .primary-menu-container {
   position: relative;
   width: 79px;
-  margin-top: 11px;
+  // margin-top: 11px;
   padding-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media #{$mq-620-up} {
+    position: static;
+    width: auto;
+    z-index: 0;
+    height: auto;
+    text-align: initial;
+    display: block;
+    // margin-top: 0;
+    padding-right: 0;
+  }
 }
 
 .primary-menu {
@@ -92,14 +107,26 @@ body {
   top: 45px;
   display: block;
   padding-right: 20px;
-
   // transform: translate3d(-100%, 0, 0);
   transform: translate3d(100%, 0, 0);
   // transform: translate3d(-100vw, 0, 0);
   transition: transform 0.2s ease-in;
-}
-.primary-menu.active {
-  transform: translate3d(0, 0, 0);
+
+  @media #{$mq-620-up} {
+    // 620up is when burger hidden
+    // reset mobile styles
+    position: static;
+    width: auto;
+    transform: translate3d(0, 0, 0);
+    z-index: 0;
+    height: auto;
+    text-align: initial;
+    display: flex;
+  }
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .primary-menu__item a {
@@ -123,11 +150,21 @@ body {
 
   &.sign-up {
     margin-bottom: 15px;
+
+    @media #{$mq-620-up} {
+      margin-bottom: 0;
+    }
   }
 
   &.log-in {
     color: $colourPrimary;
     background: $black;
+  }
+}
+
+@media #{$mq-620-up} {
+  .primary-menu__item:first-child {
+    margin-right: 12px;
   }
 }
 
