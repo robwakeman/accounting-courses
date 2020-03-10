@@ -263,7 +263,7 @@ body {
 }
 
 .main {
-  max-width: 384px;
+  min-width: 384px;
   margin: 0 15px;
 }
 
@@ -316,6 +316,10 @@ body {
   background-color: transparent;
   margin: 69px auto;
   cursor: pointer;
+
+  &.is-hidden {
+    display: none;
+  }
 
   &[disabled] {
     color: $grey3;

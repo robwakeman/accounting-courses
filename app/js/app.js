@@ -43,6 +43,10 @@ function runApp() {
     loadMoreBtn.textContent = 'Load more';
   };
 
+  const showLoadMoreButton = () => {
+    loadMoreBtn.classList.remove('is-hidden');
+  };
+
   const loadCourses = (coursesArr, batchSize, type) => {
     console.log('load courses');
 
@@ -68,6 +72,7 @@ function runApp() {
       }
 
       showOutput(coursesBatch, type);
+      showLoadMoreButton();
     }
   };
 
