@@ -1,12 +1,6 @@
 function runApp() {
   // get elements
   const coursesDiv = document.querySelector('[data-courses]');
-
-  const filterAllBtn = document.querySelector("[data-filter='all']");
-  const filterTaxBtn = document.querySelector("[data-filter='tax']");
-  const filterCommunicationBtn = document.querySelector("[data-filter='communication']");
-  const filterTechnologyBtn = document.querySelector("[data-filter='technology']");
-  // const filterButtons = document.querySelectorAll('.btn');
   const filterButtonGroup = document.querySelector('[data-filter-button-group]');
   const filterButtons = document.querySelectorAll('.btn-filter');
   const burger = document.querySelector('[data-burger]');
