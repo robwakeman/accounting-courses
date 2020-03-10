@@ -37,6 +37,7 @@ function runApp() {
     numLoads = 0;
     console.log('numLoads after reset: ', numLoads);
     loadMoreBtn.removeAttribute('disabled');
+    loadMoreBtn.textContent = 'Load more';
   };
 
   const loadCourses = (coursesArr, batchSize, type) => {
