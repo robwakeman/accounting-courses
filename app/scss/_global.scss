@@ -92,13 +92,14 @@ body {
 
 .primary-menu__item a {
   font-size: 14px;
+  line-height: 1.2;
   width: 79px;
   height: 36px;
   color: $white;
   display: inline-block;
   text-align: center;
   padding: 9px 11px 6px;
-  border: 1px solid $colourPrimary;
+  border: 2px solid $colourPrimary;
   border-radius: $borderRadius;
   cursor: pointer;
   background-color: $colourPrimary;
@@ -269,11 +270,12 @@ body {
 
 .btn-load-more {
   font-size: 14px;
+  line-height: 1.2;
   color: $colourPrimary;
   display: block;
   text-align: center;
-  padding: 9px 11px 6px;
-  border: 1px solid $colourPrimary;
+  padding: 8px 15px 8px;
+  border: 2px solid $colourPrimary;
   border-radius: $borderRadius;
   background-color: transparent;
   margin: 69px auto;
@@ -284,4 +286,45 @@ body {
     border-color: $grey3;
     cursor: default;
   }
+}
+
+.secondary-menu {
+  &__item-container {
+    border-bottom: 1px solid $grey1;
+
+    &:last-child,
+    &:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    &--special {
+      border-top: 1px solid $colourPrimary;
+
+      & .secondary-menu__item a {
+        color: $colourPrimary;
+      }
+    }
+  }
+
+  &__item {
+    margin-left: 30px;
+  }
+
+  &__item a {
+    display: inline-block;
+    padding: 9px 0;
+    color: $black;
+    line-height: 1.2;
+  }
+}
+
+.footer {
+  background: $black;
+  color: $white;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.footer-links {
+  display: flex;
 }
