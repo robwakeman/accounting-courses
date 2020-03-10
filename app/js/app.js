@@ -27,7 +27,7 @@ function runApp() {
 
   const addToNumLoads = () => {
     numLoads++;
-    console.log('numLoads in addToNumLoads: ', numLoads);
+    // console.log('numLoads in addToNumLoads: ', numLoads);
   };
 
   const reset = () => {
@@ -42,25 +42,25 @@ function runApp() {
   };
 
   const loadCourses = (coursesArr, batchSize, type) => {
-    console.log('load courses');
+    // console.log('load courses');
 
     currentType = type;
     console.log('%c currentType', 'background: #222; color: #bada55', currentType);
 
     if (coursesArr.length) {
-      console.log('batchSize', batchSize);
-      console.log('1st arg', (numLoads - 1) * batchSize);
-      console.log('2nd arg', numLoads * batchSize);
+      // console.log('batchSize', batchSize);
+      // console.log('1st arg', (numLoads - 1) * batchSize);
+      // console.log('2nd arg', numLoads * batchSize);
 
       numBatches = coursesArr.length / batchSize; //2.3
-      console.log('numBatches', numBatches);
+      // console.log('numBatches', numBatches);
 
       coursesBatch = coursesArr.slice((numLoads - 1) * batchSize, batchSize * numLoads);
-      console.log('coursesBatch: ', coursesBatch);
+      // console.log('coursesBatch: ', coursesBatch);
 
       // if the number of loads is equal to the number of batches, then disable the button
       if (numLoads === Math.ceil(numBatches)) {
-        console.log('numLoads === Math.ceil(numBatches), so disable the button to prevent loading more courses');
+        // console.log('numLoads === Math.ceil(numBatches), so disable the button to prevent loading more courses');
         loadMoreBtn.setAttribute('disabled', '');
         loadMoreBtn.textContent = 'No more courses';
       }
