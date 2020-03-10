@@ -245,7 +245,8 @@ body {
   cursor: pointer;
 
   &.is-checked {
-    background: yellow;
+    // background: yellow;
+    border-bottom: 3px solid $colourPrimary;
   }
 }
 

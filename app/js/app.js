@@ -83,15 +83,16 @@ function runApp() {
   });
 
   // get courses
-  function getCourses() {
-    fetch(APIURL)
-      .then(handleErrors)
-      .then(res => res.json())
-      .then(data => {
-        // console.log(data);
 
+  function getCourses() {
+    axios(APIURL)
+      .then(data => {
+        console.log(data);
+
+        // data returned by Axios contains data, status, statusText, header, config, so access the actual data property with data.data
         // save the data in variable coursesAll
-        coursesAll = data;
+        coursesAll = data.data;
+        // coursesAll = Array.from(data);
         // console.log('coursesAll: ', coursesAll);
 
         // filter the array by course category
@@ -109,14 +110,6 @@ function runApp() {
         loadCourses(coursesAll, 10, 'all');
       })
       .catch(err => console.log('Catch Error', err));
-  }
-
-  // handle errors
-  function handleErrors(res) {
-    if (!res.ok) {
-      throw new Error(res.statusText);
-    }
-    return res;
   }
 
   function showOutput(outputData, type) {
