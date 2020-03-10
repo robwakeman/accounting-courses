@@ -37,19 +37,10 @@ body {
 }
 
 .header-top {
-  // padding: 15px 0;
   height: 70px;
   display: flex;
   align-items: center;
   background: $grey4;
-
-  // & * {
-  //   flex: 1;
-  // }
-
-  // & .logo {
-  //   flex: 1;
-  // }
 }
 
 .logo-container {
@@ -77,7 +68,6 @@ body {
 .primary-menu-container {
   position: relative;
   width: 79px;
-  // margin-top: 11px;
   padding-right: 20px;
   display: flex;
   flex-direction: column;
@@ -90,7 +80,6 @@ body {
     height: auto;
     text-align: initial;
     display: block;
-    // margin-top: 0;
     padding-right: 0;
   }
 }
