@@ -289,6 +289,8 @@ body {
 }
 
 .secondary-menu {
+  margin-bottom: 68px;
+
   &__item-container {
     border-bottom: 1px solid $grey1;
 
@@ -319,12 +321,35 @@ body {
 }
 
 .footer {
-  background: $black;
+  background: $grey4;
   color: $white;
   font-size: 14px;
   line-height: 1.57;
 }
 
+.footer-inner {
+  max-width: 285px;
+  margin: 0 auto;
+  padding: 32px 0 0;
+  text-align: center;
+}
+
 .footer-links {
+  height: 96px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    border-right: 1px solid $grey1;
+    padding: 0 20px;
+  }
+
+  &__item a {
+    color: $white;
+  }
+}
+
+.company {
+  margin: 0;
 }
