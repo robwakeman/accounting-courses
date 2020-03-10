@@ -157,61 +157,6 @@ function runApp() {
 
   getCourses();
 
-  /*   filterAllBtn.addEventListener(
-    'click',
-    function() {
-      // showOutput(coursesAll);
-      clearCoursesDiv();
-      reset();
-      addToNumLoads();
-      loadCourses(coursesAll, 10, 'all');
-    },
-    false
-  ); */
-
-  /*   filterTaxBtn.addEventListener(
-    'click',
-    function() {
-      // showOutput(coursesTax);
-      clearCoursesDiv();
-      reset();
-      addToNumLoads();
-      loadCourses(coursesTax, 10, 'tax');
-    },
-    false
-  ); */
-
-  /*   filterCommunicationBtn.addEventListener(
-    'click',
-    function() {
-      // showOutput(coursesCommunication);
-      clearCoursesDiv();
-      reset();
-      addToNumLoads();
-      loadCourses(coursesCommunication, 10, 'communication');
-    },
-    false
-  ); */
-
-  /*   filterTechnologyBtn.addEventListener(
-    'click',
-    function() {
-      // showOutput(coursesTechnology);
-      clearCoursesDiv();
-      reset();
-      addToNumLoads();
-      loadCourses(coursesTechnology, 10, 'technology');
-    },
-    false
-  ); */
-
-  // let filterButtons = document.querySelectorAll('.popupbutton');
-  // buttons.forEach(btn => {
-  //   btn.addEventListener('click', event => {
-  //     alert(event.target);
-  //   });
-  // });
-
   filterButtonGroup.addEventListener('click', event => {
     // console.log('data attr filter: ', event.target.dataset.filter);
     courseFilter = event.target.dataset.filter;
