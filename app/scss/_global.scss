@@ -26,7 +26,6 @@ img {
 }
 
 body {
-  // background: lightgrey;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   line-height: 1.45;
@@ -38,9 +37,6 @@ body {
 }
 
 .header-top {
-  // width: 414px;
-  // height: 70px;
-  // width: 100%;
   padding: 15px 0;
   display: flex;
   background: $grey4;
@@ -56,10 +52,8 @@ body {
 
 .logo-container {
   width: 100%;
-  // background: teal;
   display: flex;
   justify-content: center;
-  // order: 1;
 }
 
 .logo-link {
@@ -79,20 +73,11 @@ body {
 .primary-menu-container {
   position: relative;
   width: 79px;
-  // width: 100%;
   margin-top: 11px;
-
-  // margin-right: 20px;
-  // new style that enables the drawer to work
   padding-right: 20px;
-
-  // background: goldenrod;
-  // text-align: right;
   display: flex;
-  // order: -1;
   flex-direction: column;
   align-items: flex-end;
-  // margin-left: auto;
 }
 
 .primary-menu {
@@ -101,16 +86,11 @@ body {
   height: 115px;
   background: #1c232e;
   width: 100vw;
-
   right: 0;
-  // right: -100vw;
-
   z-index: 10;
   text-align: right;
   top: 45px;
   display: block;
-
-  // margin-right: -20px;
   padding-right: 20px;
 
   // transform: translate3d(-100%, 0, 0);
@@ -250,8 +230,6 @@ body {
 .btn-cta {
   font-size: 15px;
   font-weight: 500;
-  // width: 79px;
-  // height: 36px;
   color: $white;
   display: inline-block;
   text-align: center;
