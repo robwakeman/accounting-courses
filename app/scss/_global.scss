@@ -249,6 +249,24 @@ body {
   }
 }
 
+.course {
+  & img {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-size: 14px;
+    line-height: 1.57;
+    margin-bottom: 64px;
+  }
+}
+
 .btn-load-more {
   font-size: 14px;
   color: $colourPrimary;
@@ -258,7 +276,7 @@ body {
   border: 1px solid $colourPrimary;
   border-radius: $borderRadius;
   background-color: transparent;
-  margin: auto;
+  margin: 69px auto;
   cursor: pointer;
 
   &[disabled] {
