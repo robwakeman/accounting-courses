@@ -77,10 +77,15 @@ body {
 }
 
 .primary-menu-container {
+  position: relative;
   width: 79px;
   // width: 100%;
   margin-top: 11px;
-  margin-right: 20px;
+
+  // margin-right: 20px;
+  // new style that enables the drawer to work
+  padding-right: 20px;
+
   // background: goldenrod;
   // text-align: right;
   display: flex;
@@ -88,6 +93,33 @@ body {
   flex-direction: column;
   align-items: flex-end;
   // margin-left: auto;
+}
+
+.primary-menu {
+  position: absolute;
+  display: block;
+  height: 115px;
+  background: #1c232e;
+  width: 100vw;
+
+  right: 0;
+  // right: -100vw;
+
+  z-index: 10;
+  text-align: right;
+  top: 45px;
+  display: block;
+
+  // margin-right: -20px;
+  padding-right: 20px;
+
+  // transform: translate3d(-100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  // transform: translate3d(-100vw, 0, 0);
+  transition: transform 0.2s ease-in;
+}
+.primary-menu.active {
+  transform: translate3d(0, 0, 0);
 }
 
 .primary-menu__item a {
@@ -108,6 +140,10 @@ body {
   // &:hover {
   //   background-color: scale-color($colourPrimary, $lightness: 70%);
   // }
+
+  &.sign-up {
+    margin-bottom: 15px;
+  }
 
   &.log-in {
     color: $colourPrimary;

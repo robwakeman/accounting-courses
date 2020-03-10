@@ -9,6 +9,8 @@ function runApp() {
   // const filterButtons = document.querySelectorAll('.btn');
   const filterButtonGroup = document.querySelector('[data-filter-button-group]');
   const filterButtons = document.querySelectorAll('.btn-filter');
+  const burger = document.querySelector('[data-burger]');
+  const primaryMenu = document.querySelector('[data-primary-menu]');
 
   // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
@@ -174,7 +176,11 @@ function runApp() {
     });
 
     event.target.classList.add('is-checked');
+  });
 
+  burger.addEventListener('click', event => {
+    console.log('clicked burger');
+    primaryMenu.classList.toggle('active');
     //
   });
 
