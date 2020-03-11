@@ -420,6 +420,10 @@ body {
 .secondary-menu {
   margin-bottom: 68px;
 
+  @media #{$mq-1180-up} {
+    margin-top: 51px;
+  }
+
   &__item-container {
     border-bottom: 1px solid $grey1;
 
