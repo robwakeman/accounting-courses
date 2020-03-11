@@ -528,6 +528,22 @@ body {
   margin: 0 auto;
   padding: 32px 0 0;
   text-align: center;
+
+  @media #{$mq-1000-up} {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    & .company {
+      margin: 0 0 18px 30px;
+    }
+
+    & .footer-links {
+      margin: 0 30px 18px 0;
+    }
+  }
 }
 
 .footer-links {
@@ -535,6 +551,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media #{$mq-1000-up} {
+    align-items: flex-end;
+  }
 
   &__item {
     border-right: 1px solid $grey1;
