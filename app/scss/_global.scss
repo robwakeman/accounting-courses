@@ -29,6 +29,13 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   line-height: 1.45;
+
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+
+  @media #{$mq-900-up} {
+    background: $grey1;
+  }
 }
 
 .header {
@@ -174,7 +181,6 @@ body {
   position: relative;
   user-select: none;
   z-index: 20;
-  background: orangered;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -282,7 +288,8 @@ body {
     justify-content: center;
 
     & .secondary-menu {
-      background: lawngreen;
+      // background: lawngreen;
+      background: $white;
       margin-left: 30px;
       // justify-self: start;
       align-self: flex-start;
@@ -293,13 +300,13 @@ body {
 }
 
 .main {
-  min-width: 384px;
+  // min-width: 384px;
 
   margin: 0 15px;
-  background: linen;
+  // background: linen;
 
   @media #{$mq-900-up} {
-    background: lightblue;
+    // background: lightblue;
     max-width: 870px;
     margin: auto;
     // margin-left: 0;
@@ -311,9 +318,7 @@ body {
   }
 
   @media #{$mq-1400-up} {
-    background: chocolate;
-    // 375 @1920 in xd
-    // margin-left: 375px;
+    // background: chocolate;
   }
 }
 
@@ -326,6 +331,10 @@ body {
   @media #{$mq-540-up} {
     justify-content: flex-start;
   }
+
+  @media #{$mq-414-down} {
+    flex-direction: column;
+  }
 }
 .btn-filter {
   font-weight: 500;
@@ -336,6 +345,10 @@ body {
   background: transparent;
   cursor: pointer;
   border-bottom: 3px solid transparent;
+
+  @media #{$mq-414-down} {
+    margin-bottom: 10px;
+  }
 
   @media #{$mq-540-up} {
     margin-right: 26px;
@@ -351,10 +364,12 @@ body {
 }
 
 .courses {
-  background: lightgrey;
-  padding: 30px;
-  display: flex;
-  flex-wrap: wrap;
+  @media #{$mq-540-up} {
+    // background: lightgrey;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   @media #{$mq-540-up} {
     .course {
@@ -382,7 +397,7 @@ body {
   }
 
   & img {
-    display: block;
+    max-width: 100%;
     margin-bottom: 24px;
     @media #{$mq-760-up} {
       width: 200px;
