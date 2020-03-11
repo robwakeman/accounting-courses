@@ -539,6 +539,10 @@ body {
   &__item {
     border-right: 1px solid $grey1;
     padding: 0 20px;
+
+    &:last-child {
+      border-right: none;
+    }
   }
 
   &__item a {
