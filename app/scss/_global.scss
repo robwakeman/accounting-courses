@@ -365,7 +365,8 @@ body {
 
 .courses {
   @media #{$mq-540-up} {
-    // background: lightgrey;
+    background: lightgrey;
+    background: $white;
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -394,6 +395,7 @@ body {
   @media #{$mq-760-up} {
     display: flex;
     align-items: flex-start;
+    margin-bottom: 71px;
   }
 
   & img {
@@ -421,6 +423,10 @@ body {
     font-size: 14px;
     line-height: 1.57;
     margin-bottom: 64px;
+
+    @media #{$mq-760-up} {
+      margin-bottom: 0;
+    }
   }
 }
 
