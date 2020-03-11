@@ -41,6 +41,10 @@ body {
   display: flex;
   align-items: center;
   background: $grey4;
+
+  @media #{$mq-620-up} {
+    justify-content: space-between;
+  }
 }
 
 .logo-container {
@@ -48,6 +52,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media #{$mq-620-up} {
+    margin-left: 30px;
+    width: auto;
+    display: block;
+  }
 }
 
 .logo-link {
@@ -81,6 +91,7 @@ body {
     text-align: initial;
     display: block;
     padding-right: 0;
+    margin-right: 30px;
   }
 }
 
@@ -96,9 +107,7 @@ body {
   top: 45px;
   display: block;
   padding-right: 20px;
-  // transform: translate3d(-100%, 0, 0);
   transform: translate3d(100%, 0, 0);
-  // transform: translate3d(-100vw, 0, 0);
   transition: transform 0.2s ease-in;
 
   @media #{$mq-620-up} {
@@ -111,6 +120,7 @@ body {
     height: auto;
     text-align: initial;
     display: flex;
+    padding-right: 0;
   }
 
   &.active {
