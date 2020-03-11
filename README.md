@@ -25,7 +25,6 @@ I realise the layout doesn't exactly match the XD file - with a little more time
 
 - text and CTA button in hero doesn't left-align to match alignment of courses
 - filter button group doesn't have full-width white background
-- footer desktop styles still to do
 
 ### Fetch/Axios
 
