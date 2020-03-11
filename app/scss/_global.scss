@@ -362,13 +362,34 @@ body {
       margin-right: 30px;
     }
   }
+
+  @media #{$mq-760-up} {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 }
 
 .course {
   animation: fadein 1.5s;
 
+  @media #{$mq-760-up} {
+    display: flex;
+    align-items: flex-start;
+  }
+
   & img {
+    display: block;
     margin-bottom: 24px;
+    @media #{$mq-760-up} {
+      width: 200px;
+      margin-right: 30px;
+    }
+  }
+
+  &__body {
+    @media #{$mq-760-up} {
+      flex: 1;
+    }
   }
 
   &__title {
