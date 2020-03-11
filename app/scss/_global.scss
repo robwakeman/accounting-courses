@@ -276,9 +276,45 @@ body {
   background-color: $colourPrimary;
 }
 
+.main-and-secondary-container {
+  @media #{$mq-1180-up} {
+    display: flex;
+    justify-content: center;
+
+    & .secondary-menu {
+      background: lawngreen;
+      margin-left: 30px;
+      // justify-self: start;
+      align-self: flex-start;
+      // flex: 1;
+      // flex: 1 0 270px;
+    }
+  }
+}
+
 .main {
   min-width: 384px;
+
   margin: 0 15px;
+  background: linen;
+
+  @media #{$mq-900-up} {
+    background: lightblue;
+    max-width: 870px;
+    margin: auto;
+    // margin-left: 0;
+  }
+
+  @media #{$mq-1180-up} {
+    // max-width: 870px;
+    margin: 0;
+  }
+
+  @media #{$mq-1400-up} {
+    background: chocolate;
+    // 375 @1920 in xd
+    // margin-left: 375px;
+  }
 }
 
 .filter-button-group {
@@ -389,6 +425,14 @@ body {
 
   &__item {
     margin-left: 30px;
+
+    @media #{$mq-1180-up} {
+      margin-right: 30px;
+    }
+
+    @media #{$mq-1400-up} {
+      margin-right: 113px;
+    }
   }
 
   &__item a {

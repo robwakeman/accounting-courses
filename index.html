@@ -9,12 +9,12 @@
     <title>Accounting Courses</title>
     <meta name="description" content="Accounting courses covering tax, communication and technology" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="dist/style.css?cb=1583888280668" />
+    <link rel="stylesheet" href="dist/style.css?cb=1583915218753" />
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 
-    <script defer src="dist/all.js?cb=1583888280668"></script>
+    <script defer src="dist/all.js?cb=1583915218753"></script>
   </head>
   <body>
     <header class="header">
@@ -46,55 +46,56 @@
         </div>
       </section>
     </header>
+    <div class="main-and-secondary-container">
+      <main class="main">
+        <div class="filter-button-group" data-filter-button-group>
+          <button class="btn-filter btn-filter-all is-checked" data-filter="all">All Courses</button>
+          <button class="btn-filter btn-filter-tax" data-filter="tax">Tax</button>
+          <button class="btn-filter btn-filter-communication" data-filter="communication">Communication</button>
+          <button class="btn-filter btn-filter-technology" data-filter="technology">Technology</button>
+        </div>
+        <section class="courses-container">
+          <div class="courses" data-courses></div>
 
-    <main class="main">
-      <div class="filter-button-group" data-filter-button-group>
-        <button class="btn-filter btn-filter-all is-checked" data-filter="all">All Courses</button>
-        <button class="btn-filter btn-filter-tax" data-filter="tax">Tax</button>
-        <button class="btn-filter btn-filter-communication" data-filter="communication">Communication</button>
-        <button class="btn-filter btn-filter-technology" data-filter="technology">Technology</button>
-      </div>
-      <section class="courses-container">
-        <div class="courses" data-courses></div>
+          <button class="btn-load-more is-hidden" data-load-more>Load more</button>
+        </section>
+      </main>
 
-        <button class="btn-load-more is-hidden" data-load-more>Load more</button>
-      </section>
-    </main>
-
-    <nav class="secondary-menu" aria-label="Secondary">
-      <ul>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container">
-          <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
-        </div>
-        <div class="secondary-menu__item-container secondary-menu__item-container--special">
-          <li class="secondary-menu__item"><a href="#">Special link</a></li>
-        </div>
-      </ul>
-    </nav>
+      <nav class="secondary-menu" aria-label="Secondary">
+        <ul>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container">
+            <li class="secondary-menu__item"><a href="#">Navigation link</a></li>
+          </div>
+          <div class="secondary-menu__item-container secondary-menu__item-container--special">
+            <li class="secondary-menu__item"><a href="#">Special link</a></li>
+          </div>
+        </ul>
+      </nav>
+    </div>
 
     <footer class="footer">
       <div class="footer-inner">
