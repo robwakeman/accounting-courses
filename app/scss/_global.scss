@@ -17,8 +17,17 @@ ul {
   margin: 0;
 }
 
-a {
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
   text-decoration: none;
+  color: $black;
+}
+
+a:hover {
+  color: $colourPrimary;
 }
 
 img {
