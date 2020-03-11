@@ -304,6 +304,7 @@ body {
   @media #{$mq-540-up} {
     margin-right: 26px;
   }
+
   @media #{$mq-620-up} {
     margin-right: 52px;
   }
@@ -314,6 +315,8 @@ body {
 }
 
 .course {
+  animation: fadein 1.5s;
+
   & img {
     margin-bottom: 24px;
   }
@@ -328,6 +331,15 @@ body {
     font-size: 14px;
     line-height: 1.57;
     margin-bottom: 64px;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
