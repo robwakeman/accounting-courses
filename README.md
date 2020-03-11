@@ -19,7 +19,15 @@ Gulp 4
 
 ## Notes
 
-### Fetch
+### Layout
+
+I realise the layout doesn't exactly match the XD file - with a little more time, I would've like to have fixed this:
+
+- text and CTA button in hero doesn't left-align to match alignment of courses
+- filter button group doesn't have full-width white background
+- footer desktop styles still to do
+
+### Fetch/Axios
 
 Fetch and Promises have very good browser support according to Can I use:  
 [Promises](https://caniuse.com/#search=promise)  
@@ -46,4 +54,6 @@ However, this broke the script:
 Adding `var exports = {};` didn't solve it, as in:  
 https://github.com/robwakeman/fetch-sandbox
 
-I didn't have time to solve this.
+I decided to use Axios instead as it comes with good cross-browser support by default.
+
+It's working fine, but ideally I'd like to try and include the code in polyfills.js and concatenate into all.js, however I ran out of time.
