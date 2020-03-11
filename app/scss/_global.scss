@@ -372,6 +372,10 @@ body {
 .course {
   animation: fadein 1.5s;
 
+  @media #{$mq-540-down} {
+    max-width: 384px;
+  }
+
   @media #{$mq-760-up} {
     display: flex;
     align-items: flex-start;
