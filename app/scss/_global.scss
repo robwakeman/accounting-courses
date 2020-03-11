@@ -289,12 +289,16 @@ body {
 }
 
 .main-and-secondary-container {
+  & .secondary-menu {
+    background: $white;
+  }
+
   @media #{$mq-1180-up} {
     display: flex;
     justify-content: center;
 
     & .secondary-menu {
-      background: $white;
+      // background: $white;
       margin-left: 30px;
       align-self: flex-start;
     }
@@ -362,6 +366,10 @@ body {
 .courses-container {
   background: $white;
   padding-bottom: 60px;
+
+  @media #{$mq-540-up} {
+    margin-bottom: 30px;
+  }
 }
 
 .courses {
