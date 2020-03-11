@@ -136,9 +136,11 @@ function runApp() {
       <!-- responsive image code to include here -->
       <!-- count batch: ${i + 1} -->
         <img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" />
+        <div class="course__body">
         <h2 class="course__title">${course.title}</h2>
         <p class="course_description">${course.description}</p>
         <div class="course__price"><b>Price</b>: &pound;${course.price}</div>
+        </div>
       </div>
     `;
     });
