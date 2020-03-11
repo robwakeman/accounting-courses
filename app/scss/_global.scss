@@ -285,6 +285,11 @@ body {
   margin: 19px 0 11px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  @media #{$mq-540-up} {
+    justify-content: flex-start;
+  }
 }
 .btn-filter {
   font-weight: 500;
@@ -294,6 +299,14 @@ body {
   border: 0;
   background: transparent;
   cursor: pointer;
+  border-bottom: 3px solid transparent;
+
+  @media #{$mq-540-up} {
+    margin-right: 26px;
+  }
+  @media #{$mq-620-up} {
+    margin-right: 52px;
+  }
 
   &.is-checked {
     border-bottom: 3px solid $colourPrimary;
