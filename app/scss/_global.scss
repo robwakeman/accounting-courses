@@ -42,7 +42,7 @@ body {
   max-width: 100% !important;
   overflow-x: hidden !important;
 
-  @media #{$mq-900-up} {
+  @media #{$mq-540-up} {
     background: $grey1;
   }
 }
@@ -359,6 +359,11 @@ body {
   }
 }
 
+.courses-container {
+  background: $white;
+  padding-bottom: 60px;
+}
+
 .courses {
   @media #{$mq-540-up} {
     background: lightgrey;
@@ -445,7 +450,7 @@ body {
   border: 2px solid $colourPrimary;
   border-radius: $borderRadius;
   background-color: transparent;
-  margin: 69px auto;
+  margin: 0 auto;
   cursor: pointer;
 
   &.is-hidden {
