@@ -8,7 +8,8 @@ function runApp() {
   const loadMoreBtn = document.querySelector('[data-load-more]');
 
   // API URL (array of 29 objects)
-  const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
+  // const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
+  const APIURL = './api-local/accounting-courses.api.json';
   let coursesAll;
   let coursesTax;
   let coursesCommunication;
