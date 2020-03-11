@@ -350,6 +350,20 @@ body {
   }
 }
 
+.courses {
+  background: lightgrey;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media #{$mq-540-up} {
+    .course {
+      flex: 200px;
+      margin-right: 30px;
+    }
+  }
+}
+
 .course {
   animation: fadein 1.5s;
 
