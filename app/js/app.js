@@ -5,6 +5,7 @@ function runApp() {
   const filterButtons = document.querySelectorAll('.btn-filter');
   const burger = document.querySelector('[data-burger]');
   const primaryMenu = document.querySelector('[data-primary-menu]');
+  const loadMoreBtn = document.querySelector('[data-load-more]');
 
   // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
@@ -15,9 +16,6 @@ function runApp() {
   let currentType;
   let output;
   let imageSrcNoExt;
-
-  const loadMoreBtn = document.querySelector('[data-load-more]');
-
   let numLoads = 0;
   let coursesBatch;
   let numBatches;
