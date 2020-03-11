@@ -84,6 +84,7 @@ body {
 
 .primary-menu-container {
   position: relative;
+  z-index: 20;
   width: 79px;
   padding-right: 20px;
   display: flex;
@@ -106,16 +107,25 @@ body {
   position: absolute;
   display: block;
   height: 115px;
-  background: #1c232e;
+  height: auto;
+  // background: #1c232e;
+  // background: greenyellow;
+  background: transparent;
   width: 100vw;
   right: 0;
-  z-index: 10;
+  // z-index: 10;
   text-align: right;
   top: 45px;
   display: block;
   padding-right: 20px;
-  transform: translate3d(100%, 0, 0);
-  transition: transform 0.2s ease-in;
+  // transform: translate3d(100%, 0, 0);
+  transform: translate3d(0, -200%, 0);
+  opacity: 0;
+  transition: all 0.2s ease-in;
+
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
 
   @media #{$mq-620-up} {
     // 620up is when burger hidden
@@ -124,14 +134,19 @@ body {
     width: auto;
     transform: translate3d(0, 0, 0);
     z-index: 0;
-    height: auto;
+    // height: auto;
     text-align: initial;
     display: flex;
+    justify-content: flex-start;
     padding-right: 0;
+    opacity: 1;
+    margin-top: 0;
   }
 
   &.active {
     transform: translate3d(0, 0, 0);
+    opacity: 1;
+    // transform: translate3d(0, -100%, 0);
   }
 }
 
@@ -155,7 +170,7 @@ body {
   // }
 
   &.sign-up {
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
 
     @media #{$mq-620-up} {
       margin-bottom: 0;
@@ -168,10 +183,8 @@ body {
   }
 }
 
-@media #{$mq-620-up} {
-  .primary-menu__item:first-child {
-    margin-right: 12px;
-  }
+.primary-menu__item:first-child {
+  margin-right: 12px;
 }
 
 .menu-burger {
