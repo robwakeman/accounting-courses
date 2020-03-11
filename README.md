@@ -57,3 +57,7 @@ https://github.com/robwakeman/fetch-sandbox
 I decided to use Axios instead as it comes with good cross-browser support by default.
 
 It's working fine, but ideally I'd like to try and include the code in polyfills.js and concatenate into all.js, however I ran out of time.
+
+### Connection issues
+
+I had some local connection issues, so decided to copy the data from the API into a local JSON file while issues persisted.
