@@ -21,7 +21,7 @@ Gulp 4
 
 ### Layout
 
-I realise the layout doesn't exactly match the XD file - with a little more time, I would've like to have fixed this:
+I realise the layout doesn't exactly match the XD file - with a little more time, I would've liked to have fixed this:
 
 - text and CTA button in hero doesn't left-align to match alignment of courses
 - filter button group doesn't have full-width white background
