@@ -446,6 +446,28 @@ body {
     margin-bottom: 71px;
   }
 
+  &__image-container {
+    position: relative;
+
+    & span {
+      position: absolute;
+      left: 0;
+      top: 50px;
+      // background colour to be set by JS depending on type
+      background: hotpink;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: $white;
+      padding: 0.25em;
+
+      @media #{$mq-540-up} {
+        top: auto;
+        bottom: 50px;
+        font-size: 12px;
+      }
+    }
+  }
+
   & img {
     max-width: 100%;
     margin-bottom: 24px;

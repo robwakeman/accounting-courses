@@ -137,7 +137,8 @@ function runApp() {
       <!-- responsive image code to include here -->
       <!-- count batch: ${i + 1} -->
 
-        <a href="#"><img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" srcset="dist/images/${imageSrcNoExt}-2x.jpg 768w" /></a>
+      
+      <a href="#"><div class="course__image-container"><img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" srcset="dist/images/${imageSrcNoExt}-2x.jpg 768w" /><span>${course.type}</span></div></a>
         <div class="course__body">
         <a href="#"><h2 class="course__title">${course.title}</h2></a>
         <p class="course_description">${course.description}</p>
