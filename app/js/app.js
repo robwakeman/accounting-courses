@@ -128,22 +128,11 @@ function runApp() {
     // debug output - currently disabled
     // output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">DEBUG No. courses loaded: ${outputData.length} ${type} (Total ${totalCourses})</div>`;
 
-    // courseTypeColours = {
-    //   tax: 'pink',
-    //   communication: 'orange',
-    //   technology: 'green',
-    // };
-
     output = ``;
 
     outputData.forEach(function(course, i) {
       // regex expression that allows for 3 or 4 character file extensions
       imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
-
-      // console.log(courseTypeColours[`${course.type}`]);
-
-      // courseTypeColour = courseTypeColours[`${course.type}`];
-      // console.log(courseTypeColour);
 
       output += `
       <div class="course">
