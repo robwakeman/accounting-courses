@@ -4,7 +4,7 @@ Coding test for Nelson Croom.
 
 Design: [XD file](https://xd.adobe.com/view/e32b2883-a592-4385-4f5a-7fcefe945f8a-951a/screen/6481ffeb-3e29-41f2-9a7a-b25cf144a39d/Mobile)
 
-[Demo](http://dev.robwakeman.com/accounting-courses/) (work in progress)
+[Demo](http://robwakemandev.com/accounting-courses/)
 
 ## Task runner
 
@@ -21,7 +21,7 @@ Gulp 4
 
 ### Sort by
 
-I added and styled the 'sort by' element, but no time to add functionality.
+I added and styled the 'sort by' element, but ran out of time to add the functionality.
 
 ### Fetch/Axios
 
