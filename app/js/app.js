@@ -159,6 +159,7 @@ function runApp() {
 
   filterButtonGroup.addEventListener('click', event => {
     // console.log('data attr filter: ', event.target.dataset.filter);
+    event.preventDefault();
     courseFilter = event.target.dataset.filter;
     clearCoursesDiv();
     reset();
@@ -183,6 +184,7 @@ function runApp() {
 
   burger.addEventListener('click', event => {
     console.log('clicked burger');
+    event.preventDefault();
     primaryMenu.classList.toggle('active');
     //
   });
