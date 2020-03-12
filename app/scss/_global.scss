@@ -39,9 +39,6 @@ body {
   font-size: 18px;
   line-height: 1.45;
 
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-
   @media #{$mq-540-up} {
     background: $grey1;
   }
