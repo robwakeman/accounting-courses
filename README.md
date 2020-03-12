@@ -19,12 +19,9 @@ Gulp 4
 
 ## Notes
 
-### Layout
+### Sort by
 
-I realise the layout doesn't exactly match the XD file - with a little more time, I would've liked to have fixed this:
-
-- text and CTA button in hero doesn't left-align to match alignment of courses
-- filter button group doesn't have full-width white background
+I added and styled the 'sort by' element, but no time to add functionality.
 
 ### Fetch/Axios
 
@@ -53,10 +50,12 @@ However, this broke the script:
 Adding `var exports = {};` didn't solve it, as in:  
 https://github.com/robwakeman/fetch-sandbox
 
-I decided to use Axios instead as it comes with good cross-browser support by default.
+So, ultimately, I decided to use Axios instead as it comes with good cross-browser support.
 
-It's working fine, but ideally I'd like to try and include the code in polyfills.js and concatenate into all.js, however I ran out of time.
+Axios and a Promises polyfill are provided by CDN links, but ideally I'd like to try and include the code in polyfills.js and concatenate into all.js, however I ran out of time.
 
 ### Connection issues
 
-I had some local connection issues, so decided to copy the data from the API into a local JSON file while issues persisted.
+I had some connection issues, so I decided to copy the data from the API into a local JSON file while issues persisted.
+
+The current data is sourced from https://learn.accountingcpd.net/ACPD/API/Test/SampleObject
