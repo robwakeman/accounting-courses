@@ -226,39 +226,7 @@ body {
 }
 
 .hero {
-  position: relative;
-  background: url(../dist/images/lake-m1x.jpg) center no-repeat;
-  background-color: $grey3;
-  background-color: #dddddd;
-  background-blend-mode: multiply;
-  height: 298px;
-
-  @media #{$mq-900-up} {
-    background: url(../dist/images/lake-d1x.jpg) center no-repeat;
-  }
-
-  &__inner {
-    position: absolute;
-    top: 30px;
-    left: 15px;
-    right: 15px;
-
-    @media #{$mq-540-up} {
-      top: 60px;
-    }
-
-    @media #{$mq-620-up} {
-      top: 60px;
-    }
-
-    @media #{$mq-760-up} {
-      max-width: 600px;
-    }
-
-    @media #{$mq-900-up} {
-      max-width: 765px;
-    }
-  }
+  margin: 0 15px;
 
   & h1 {
     margin-bottom: 12px;
@@ -286,6 +254,68 @@ body {
   border-radius: $borderRadius;
   cursor: pointer;
   background-color: $colourPrimary;
+}
+
+.hero-outermost {
+  background: url(../dist/images/lake-m1x.jpg) center no-repeat;
+  background-color: $grey3;
+  background-color: #dddddd;
+  background-blend-mode: multiply;
+  height: 298px;
+
+  @media #{$mq-900-up} {
+    background: url(../dist/images/lake-d1x.jpg) center no-repeat;
+  }
+}
+
+.hero-container {
+  padding-top: 30px;
+
+  @media #{$mq-540-up} {
+    padding-top: 60px;
+  }
+  @media #{$mq-900-up} {
+    max-width: 870px;
+    margin: auto;
+  }
+
+  @media #{$mq-1000-up} {
+    padding-top: 50px;
+  }
+
+  @media #{$mq-1180-up} {
+    max-width: initial;
+    margin: 0;
+  }
+
+  @media #{$mq-1400-up} {
+    // background: chocolate;
+  }
+
+  & .hero {
+    @media #{$mq-900-up} {
+      width: 870px;
+      margin-left: 0px;
+    }
+  }
+
+  @media #{$mq-1180-up} {
+    display: flex;
+    justify-content: center;
+
+    & .hero-dummy {
+      background: $pink;
+      width: 178px;
+      margin-left: 30px;
+      align-self: flex-start;
+    }
+  }
+
+  @media #{$mq-1400-up} {
+    & .hero-dummy {
+      width: 261px;
+    }
+  }
 }
 
 .main-and-secondary-container {
@@ -457,7 +487,7 @@ body {
   padding-bottom: 60px;
 
   @media #{$mq-540-up} {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 }
 
