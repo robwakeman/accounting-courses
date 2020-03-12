@@ -72,6 +72,7 @@ function runApp() {
   };
 
   loadMoreBtn.addEventListener('click', function() {
+    event.preventDefault();
     addToNumLoads();
     if (currentType === 'all') {
       loadCourses(coursesAll, 10, currentType);
