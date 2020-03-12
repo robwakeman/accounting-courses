@@ -321,7 +321,6 @@ body {
     justify-content: center;
 
     & .secondary-menu {
-      // background: $white;
       margin-left: 30px;
       align-self: flex-start;
     }
@@ -339,10 +338,6 @@ body {
   @media #{$mq-1180-up} {
     margin: 0;
     margin-top: 15px;
-  }
-
-  @media #{$mq-1400-up} {
-    // background: chocolate;
   }
 }
 
@@ -362,10 +357,6 @@ body {
     background: $white;
     max-width: initial;
     margin: 0;
-  }
-
-  @media #{$mq-1400-up} {
-    // background: chocolate;
   }
 
   & .filter-button-group {
