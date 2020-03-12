@@ -517,7 +517,7 @@ body {
       position: absolute;
       left: 0;
       top: 50px;
-      // background colour to be set by JS depending on type
+      // JS adds class to span with course type - this is then used to select the span and set the background colour (see below) - default colour $grey4 in case the script fails
       background: $grey4;
       font-size: 16px;
       text-transform: uppercase;
