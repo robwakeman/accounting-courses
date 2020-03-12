@@ -23,6 +23,8 @@ function runApp() {
   // totalCourses used in logic for testing, but debug output currently disabled
   let totalCourses;
   let courseFilter;
+  let courseTypeColours;
+  let courseTypeColour;
 
   const addToNumLoads = () => {
     numLoads++;
@@ -126,19 +128,29 @@ function runApp() {
     // debug output - currently disabled
     // output = `<div style="font-size: small; color: orange; margin-bottom: 1rem;">DEBUG No. courses loaded: ${outputData.length} ${type} (Total ${totalCourses})</div>`;
 
+    // courseTypeColours = {
+    //   tax: 'pink',
+    //   communication: 'orange',
+    //   technology: 'green',
+    // };
+
     output = ``;
 
     outputData.forEach(function(course, i) {
       // regex expression that allows for 3 or 4 character file extensions
       imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
 
+      // console.log(courseTypeColours[`${course.type}`]);
+
+      // courseTypeColour = courseTypeColours[`${course.type}`];
+      // console.log(courseTypeColour);
+
       output += `
       <div class="course">
       <!-- responsive image code to include here -->
       <!-- count batch: ${i + 1} -->
-
       
-      <a href="#"><div class="course__image-container"><img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" srcset="dist/images/${imageSrcNoExt}-2x.jpg 768w" /><span>${course.type}</span></div></a>
+      <a href="#"><div class="course__image-container"><img src="dist/images/${imageSrcNoExt}-1x.jpg" alt="${course.altText}" srcset="dist/images/${imageSrcNoExt}-2x.jpg 768w" /><span class="${course.type}">${course.type}</span></div></a>
         <div class="course__body">
         <a href="#"><h2 class="course__title">${course.title}</h2></a>
         <p class="course_description">${course.description}</p>

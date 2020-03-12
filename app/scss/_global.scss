@@ -454,7 +454,7 @@ body {
       left: 0;
       top: 50px;
       // background colour to be set by JS depending on type
-      background: hotpink;
+      background: $grey4;
       font-size: 16px;
       text-transform: uppercase;
       color: $white;
@@ -464,6 +464,16 @@ body {
         top: auto;
         bottom: 50px;
         font-size: 12px;
+      }
+
+      &.tax {
+        background: $pink;
+      }
+      &.communication {
+        background: $orange;
+      }
+      &.technology {
+        background: $green;
       }
     }
   }
