@@ -285,10 +285,6 @@ body {
     margin: 0;
   }
 
-  @media #{$mq-1400-up} {
-    // background: chocolate;
-  }
-
   & .hero {
     @media #{$mq-900-up} {
       width: 870px;
