@@ -24,8 +24,6 @@ function runApp() {
   // totalCourses used in logic for testing, but debug output currently disabled
   let totalCourses;
   let courseFilter;
-  let courseTypeColours;
-  let courseTypeColour;
 
   const sortSelectHandler = () => {
     console.log(sortSelect.value);
