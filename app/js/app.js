@@ -5,6 +5,7 @@ function runApp() {
   const filterButtons = document.querySelectorAll('.btn-filter');
   const burger = document.querySelector('[data-burger]');
   const primaryMenu = document.querySelector('[data-primary-menu]');
+  const sortSelect = document.querySelector('[data-sort-select]');
   const loadMoreBtn = document.querySelector('[data-load-more]');
 
   // API URL (array of 29 objects)
@@ -25,6 +26,12 @@ function runApp() {
   let courseFilter;
   let courseTypeColours;
   let courseTypeColour;
+
+  const sortSelectHandler = () => {
+    console.log(sortSelect.value);
+  };
+
+  sortSelect.addEventListener('input', sortSelectHandler);
 
   const addToNumLoads = () => {
     numLoads++;
