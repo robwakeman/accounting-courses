@@ -29,7 +29,7 @@ function runApp() {
     console.log(sortSelect.value);
   };
 
-  sortSelect.addEventListener('input', sortSelectHandler);
+  sortSelect.addEventListener('change', sortSelectHandler);
 
   const addToNumLoads = () => {
     numLoads++;
