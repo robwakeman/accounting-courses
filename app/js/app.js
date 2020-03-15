@@ -166,7 +166,15 @@ function runApp() {
   filterButtonGroup.addEventListener('click', event => {
     // console.log('data attr filter: ', event.target.dataset.filter);
     event.preventDefault();
+
+    // if there's a click on somewhere in .filter-button-group, but not on an actual filter button, then return (don't run the code)
+    if (!event.target.classList.contains('btn-filter')) {
+      console.log('Clicked outside filter button');
+      return;
+    }
+    console.log('Clicked inside filter button');
     courseFilter = event.target.dataset.filter;
+
     clearCoursesDiv();
     reset();
     addToNumLoads();
