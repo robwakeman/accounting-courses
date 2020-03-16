@@ -111,6 +111,8 @@ function runApp() {
         coursesTechnology = coursesAll.filter(course => course.type === 'technology');
         // console.log('coursesTechnology: ', coursesTechnology);
 
+        // sort the courses arrays here?
+
         // show all courses on first load
         // showOutput(coursesAll);
         addToNumLoads();
