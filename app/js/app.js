@@ -81,22 +81,18 @@ function runApp() {
     switch (sortMethod) {
       case 'title':
         console.log('in switch (loadCourses): title');
-        // return coursesAll.sort((a, b) => (a.title > b.title ? 1 : -1));
         coursesArr = coursesArr.sort((a, b) => (a.title > b.title ? 1 : -1));
         break;
       case 'priceLowToHigh':
         console.log('in switch (loadCourses): priceLowToHigh');
-        // return coursesAll.sort((a, b) => (a.price > b.price ? 1 : -1));
         coursesArr = coursesArr.sort((a, b) => (a.price > b.price ? 1 : -1));
         break;
       case 'priceHighToLow':
         console.log('in switch (loadCourses): priceHighToLow');
-        // return coursesAll.sort((a, b) => (a.price < b.price ? 1 : -1));
         coursesArr = coursesArr.sort((a, b) => (a.price < b.price ? 1 : -1));
         break;
       default:
         console.log('in switch (loadCourses): no sorting');
-        // return coursesAll;
         coursesArr = coursesArr;
     }
 
