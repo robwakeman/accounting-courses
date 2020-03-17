@@ -11,6 +11,7 @@ function runApp() {
   // API URL (array of 29 objects)
   const APIURL = 'https://learn.accountingcpd.net/ACPD/API/Test/SampleObject';
   // const APIURL = './api-local/accounting-courses.api.json';
+  let coursesArr;
   let coursesAll;
   let coursesTax;
   let coursesCommunication;
@@ -24,9 +25,30 @@ function runApp() {
   // totalCourses used in logic for testing, but debug output currently disabled
   let totalCourses;
   let courseFilter;
+  let sortMethod;
 
   const sortSelectHandler = () => {
     console.log(sortSelect.value);
+
+    sortMethod = sortSelect.value;
+
+    switch (currentType) {
+      case 'tax':
+        coursesArr = coursesTax;
+        break;
+      case 'communication':
+        coursesArr = coursesCommunication;
+        break;
+      case 'technology':
+        coursesArr = coursesTechnology;
+        break;
+      default:
+        coursesArr = coursesAll;
+    }
+
+    coursesDiv.innerHTML = '';
+    // console.log('inside sortSelectHandler, sortMethod is: ', sortMethod);
+    loadCourses(coursesArr, 10, currentType, sortMethod);
   };
 
   sortSelect.addEventListener('change', sortSelectHandler);
@@ -47,11 +69,36 @@ function runApp() {
     loadMoreBtn.classList.remove('is-hidden');
   };
 
-  const loadCourses = (coursesArr, batchSize, type) => {
+  const loadCourses = (coursesArr, batchSize, type, sortBy) => {
     // console.log('load courses');
 
     currentType = type;
     console.log('%c currentType', 'background: #222; color: #bada55', currentType);
+
+    console.log('coursesArr (in loadCourses)', coursesArr);
+
+    // 'sort by' functions
+    switch (sortMethod) {
+      case 'title':
+        console.log('in switch (loadCourses): title');
+        // return coursesAll.sort((a, b) => (a.title > b.title ? 1 : -1));
+        coursesArr = coursesArr.sort((a, b) => (a.title > b.title ? 1 : -1));
+        break;
+      case 'priceLowToHigh':
+        console.log('in switch (loadCourses): priceLowToHigh');
+        // return coursesAll.sort((a, b) => (a.price > b.price ? 1 : -1));
+        coursesArr = coursesArr.sort((a, b) => (a.price > b.price ? 1 : -1));
+        break;
+      case 'priceHighToLow':
+        console.log('in switch (loadCourses): priceHighToLow');
+        // return coursesAll.sort((a, b) => (a.price < b.price ? 1 : -1));
+        coursesArr = coursesArr.sort((a, b) => (a.price < b.price ? 1 : -1));
+        break;
+      default:
+        console.log('in switch (loadCourses): no sorting');
+        // return coursesAll;
+        coursesArr = coursesArr;
+    }
 
     if (coursesArr.length) {
       // console.log('batchSize', batchSize);
