@@ -53,7 +53,6 @@ function runApp() {
     // now that we're about to load sorted courses (initiated by the 'sort by' select), we need to empty the courses first
     emptyCourses();
 
-    // console.log('inside sortSelectHandler, sortMethod is: ', sortMethod);
     loadCourses(coursesArr, 10, currentType, sortMethod);
   };
 
@@ -223,7 +222,6 @@ function runApp() {
       // console.log('Clicked outside filter button');
       return;
     }
-    // console.log('Clicked inside filter button');
     courseFilter = event.target.dataset.filter;
 
     clearCoursesDiv();
