@@ -27,6 +27,10 @@ function runApp() {
   let courseFilter;
   let sortMethod;
 
+  const emptyCourses = () => {
+    coursesDiv.innerHTML = '';
+  };
+
   const sortSelectHandler = () => {
     console.log(sortSelect.value);
 
@@ -46,7 +50,9 @@ function runApp() {
         coursesArr = coursesAll;
     }
 
-    coursesDiv.innerHTML = '';
+    // now that we're about to load sorted courses (initiated by the 'sort by' select), we need to empty the courses first
+    emptyCourses();
+
     // console.log('inside sortSelectHandler, sortMethod is: ', sortMethod);
     loadCourses(coursesArr, 10, currentType, sortMethod);
   };
