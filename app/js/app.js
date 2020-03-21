@@ -36,6 +36,10 @@ function runApp() {
 
     sortMethod = sortSelect.value;
 
+    if (!sortMethod) {
+      return;
+    }
+
     switch (currentType) {
       case 'tax':
         coursesArr = coursesTax;
@@ -229,13 +233,13 @@ function runApp() {
     addToNumLoads();
 
     if (courseFilter === 'all') {
-      loadCourses(coursesAll, 10, 'all');
+      loadCourses(coursesAll, 10, 'all', sortMethod);
     } else if (courseFilter === 'tax') {
-      loadCourses(coursesTax, 10, 'tax');
+      loadCourses(coursesTax, 10, 'tax', sortMethod);
     } else if (courseFilter === 'communication') {
-      loadCourses(coursesCommunication, 10, 'communication');
+      loadCourses(coursesCommunication, 10, 'communication', sortMethod);
     } else if (courseFilter === 'technology') {
-      loadCourses(coursesTechnology, 10, 'technology');
+      loadCourses(coursesTechnology, 10, 'technology', sortMethod);
     }
 
     filterButtons.forEach(function(filterButton) {
