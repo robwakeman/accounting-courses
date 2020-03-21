@@ -21,7 +21,7 @@ Gulp 4
 
 ### Sort by
 
-I added and styled the 'sort by' element, but ran out of time to add the functionality.
+'Sort by' functionality now working. The ‘sort by’ selected option is remembered if switching filter.
 
 ### Fetch/Axios
 
