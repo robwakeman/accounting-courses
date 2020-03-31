@@ -9,12 +9,12 @@
     <title>Accounting Courses</title>
     <meta name="description" content="Accounting courses covering tax, communication and technology" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="dist/style.css?cb=1584576834142" />
+    <link rel="stylesheet" href="dist/style.css?cb=1585652422688" />
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 
-    <script defer src="dist/all.js?cb=1584576834142"></script>
+    <script defer src="dist/all.js?cb=1585652422688"></script>
   </head>
   <body>
     <header class="header">
@@ -74,7 +74,9 @@
           </select>
         </form>
         <section class="courses-container">
-          <div class="courses" data-courses></div>
+          <div class="courses" data-courses>
+            <div hidden data-spinner></div>
+          </div>
 
           <button class="btn-load-more is-hidden" data-load-more>Load more</button>
         </section>

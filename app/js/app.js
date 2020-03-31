@@ -1,6 +1,7 @@
 function runApp() {
   // get elements
   const coursesDiv = document.querySelector('[data-courses]');
+  const spinner = document.querySelector('[data-spinner]');
   const filterButtonGroup = document.querySelector('[data-filter-button-group]');
   const filterButtons = document.querySelectorAll('.btn-filter');
   const burger = document.querySelector('[data-burger]');
@@ -145,9 +146,12 @@ function runApp() {
   // get courses
 
   function getCourses() {
+    spinner.removeAttribute('hidden');
+
     axios(APIURL)
       .then(data => {
         console.log(data);
+        spinner.setAttribute('hidden', '');
 
         // data returned by Axios contains data, status, statusText, header, config, so access the actual data property with data.data
         // save the data in variable coursesAll
