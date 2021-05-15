@@ -129,7 +129,7 @@ function runApp() {
     }
   };
 
-  loadMoreBtn.addEventListener('click', function() {
+  loadMoreBtn.addEventListener('click', function () {
     event.preventDefault();
     addToNumLoads();
     if (currentType === 'all') {
@@ -149,7 +149,7 @@ function runApp() {
     spinner.removeAttribute('hidden');
 
     axios(APIURL)
-      .then(data => {
+      .then((data) => {
         console.log(data);
         spinner.setAttribute('hidden', '');
 
@@ -160,11 +160,11 @@ function runApp() {
         // console.log('coursesAll: ', coursesAll);
 
         // filter the array by course category
-        coursesTax = coursesAll.filter(course => course.type === 'tax');
+        coursesTax = coursesAll.filter((course) => course.type === 'tax');
         // console.log('coursesTax: ', coursesTax);
-        coursesCommunication = coursesAll.filter(course => course.type === 'communication');
+        coursesCommunication = coursesAll.filter((course) => course.type === 'communication');
         // console.log('coursesCommunication: ', coursesCommunication);
-        coursesTechnology = coursesAll.filter(course => course.type === 'technology');
+        coursesTechnology = coursesAll.filter((course) => course.type === 'technology');
         // console.log('coursesTechnology: ', coursesTechnology);
 
         // sort the courses arrays here?
@@ -175,7 +175,7 @@ function runApp() {
         // on first fetch, load 10 courses from all categories
         loadCourses(coursesAll, 10, 'all');
       })
-      .catch(err => console.log('Catch Error', err));
+      .catch((err) => console.log('Catch Error', err));
   }
 
   function showOutput(outputData, type) {
@@ -194,7 +194,7 @@ function runApp() {
 
     output = ``;
 
-    outputData.forEach(function(course, i) {
+    outputData.forEach(function (course, i) {
       // regex expression that allows for 3 or 4 character file extensions
       imageSrcNoExt = course.imageSrc.replace(/\.[^/.]+$/, '');
 
@@ -221,7 +221,7 @@ function runApp() {
 
   getCourses();
 
-  filterButtonGroup.addEventListener('click', event => {
+  filterButtonGroup.addEventListener('click', (event) => {
     // console.log('data attr filter: ', event.target.dataset.filter);
     event.preventDefault();
 
@@ -246,14 +246,14 @@ function runApp() {
       loadCourses(coursesTechnology, 10, 'technology', sortMethod);
     }
 
-    filterButtons.forEach(function(filterButton) {
+    filterButtons.forEach(function (filterButton) {
       filterButton.classList.remove('is-checked');
     });
 
     event.target.classList.add('is-checked');
   });
 
-  burger.addEventListener('click', event => {
+  burger.addEventListener('click', (event) => {
     console.log('clicked burger');
     event.preventDefault();
     primaryMenu.classList.toggle('active');
